@@ -1,0 +1,11 @@
+body{
+	background-color: #F7E9E9;
+}
+#cabecalho{
+	border: 2px solid gray;
+
+}
+.conteudo{
+	margin-top: 15px;
+	padding-left: 20px;
+}

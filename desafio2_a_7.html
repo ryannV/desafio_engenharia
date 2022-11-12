@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rethink - Desafio</title>
+
+		<style type="text/css">
+
+			h1{
+				color: greenyellow;
+				font-size: 50px;
+			}
+			
+			#fundo{
+				background-color: black;
+			}
+
+		</style>
+
+	</head>
+	<body id="fundo">
+		<div>
+			<div align="center">
+				<h1>Bem vindo a resolução do desafio!</h1>
+				<h1>Pressione F12</h1>
+			</div>
+		</div>
+		<script type="text/javascript">
+			const pessoas = [
+			{ name: "Fabiana Araújo", age: 33 }, 
+			{ name: "Gabriel Gomes", age: 25 }, 
+			{ name: "Fernando Henrique", age: 17 },
+			{ name: "Ana Luiza", age: 2 },
+			{ name: "Geralda do Nascimento", age: 93 },
+			{ name: "Miguel de Souza", age: 70 },
+			{ name: "Antonio Miguel", age: 69 }
+			];
+
+			function getByName(n){
+				var x;
+				pessoas.forEach(function(p){
+					if(p.name == n){
+						x = p;
+					}
+				});
+				return x;
+			}
+
+			function getNomes(){
+				var x = [];
+				pessoas.forEach(function(y){
+					x.push(y.name.split(" ")[0]);
+
+				})
+				return x;
+			}
+
+			function insertId(){
+				var x = 0;
+				pessoas.forEach(function(z){
+					z.id = x ++;
+				})
+			}
+
+			function pessoasCNH(){
+				var x = [];
+				x = pessoas.filter(checkIdade);
+				return x;
+			}
+
+			function checkIdade(p){
+				if(p.age >= 18){
+					return p;
+				}
+			}
+
+			function idadeMedia(){
+				var m = 0, t = 0;
+				pessoas.forEach(function(i){
+					t = i.age + t;
+					m = t/7;
+				})
+				console.log(m);
+			}
+
+			idadeMedia();
+			console.log(pessoasCNH());
+			insertId();
+			console.log(pessoas);
+			var y = getByName("Antonio Miguel");
+			console.log(y);
+			console.log(getNomes());
+		</script>
+
+	</body>
+</html>
